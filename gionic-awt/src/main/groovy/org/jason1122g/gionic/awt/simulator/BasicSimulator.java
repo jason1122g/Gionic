@@ -94,15 +94,15 @@ abstract class BasicSimulator implements AWTSimulator {
             dispatchMouseEvent( MouseEvent.MOUSE_EXITED, x, y, 1 );
         }
     }
-
+    
     @Override
     public void move( int x, int y ) {
-
+        dispatchMouseEvent( MouseEvent.MOUSE_MOVED, x, y, 1 );
     }
 
     @Override
     public void drag( int x, int y ) {
-
+        dispatchMouseEvent( MouseEvent.MOUSE_DRAGGED, x, y, 1 );
     }
 
     public Component getEventTarget(){

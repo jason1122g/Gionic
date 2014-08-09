@@ -1,5 +1,7 @@
 package org.jason1122g.gionic.awt.simulator;
 
+import org.jason1122g.gionic.awt.behavior.path.DragPath;
+import org.jason1122g.gionic.awt.behavior.path.MovePath;
 import org.jason1122g.gionic.awt.behavior.point.*;
 import org.jason1122g.gionic.behavior.Key;
 import org.jason1122g.gionic.behavior.Path;
@@ -46,12 +48,12 @@ public class RealSimulator extends BasicSimulator {
 
     @Override
     public Path move() {
-        return null;
+        return new MovePath().setSimulator( this );
     }
 
     @Override
     public Path drag() {
-        return null;
+        return new DragPath().setSimulator( this );
     }
 
     @Override

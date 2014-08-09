@@ -14,21 +14,21 @@ class ReleasePointTest extends Specification {
         release     = new ReleasePoint().setSimulator( simulator )
     }
 
-    def "call at() to specify the press location"(){
+    def "call at() to specify the release location"(){
         when:
             release.at( 10, 10 )
         then:
             1 * simulator.release( 10, 10, 1 );
     }
 
-    def "call forTimes() to specify the press times"(){
+    def "call forTimes() to specify the release times"(){
         when:
             release.forTimes( 3 ).at( 1, 2 )
         then:
             1 * simulator.release( 1, 2, 3)
     }
 
-    def "call atSomeWhere() to press at some point"(){
+    def "call atSomeWhere() to release at some point"(){
         when:
             release.atSomeWhere()
         then:

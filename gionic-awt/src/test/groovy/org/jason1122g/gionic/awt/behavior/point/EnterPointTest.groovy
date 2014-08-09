@@ -14,21 +14,21 @@ class EnterPointTest extends Specification {
         enter     = new EnterPoint().setSimulator( simulator )
     }
 
-    def "call at() to specify the press location"(){
+    def "call at() to specify the enter location"(){
         when:
             enter.at( 10, 10 )
         then:
             1 * simulator.enter( 10, 10, 1 );
     }
 
-    def "call forTimes() to specify the press times"(){
+    def "call forTimes() to specify the enter times"(){
         when:
             enter.forTimes( 3 ).at( 1, 2 )
         then:
             1 * simulator.enter( 1, 2, 3)
     }
 
-    def "call atSomeWhere() to press at some point"(){
+    def "call atSomeWhere() to enter at some point"(){
         when:
             enter.atSomeWhere()
         then:

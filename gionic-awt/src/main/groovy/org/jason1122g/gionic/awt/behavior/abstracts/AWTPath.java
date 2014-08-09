@@ -8,7 +8,7 @@ public abstract class AWTPath implements Path {
     private AWTSimulator simulator;
     @Override
     public void inSomePath() {
-        from( 0, 0 ).to( 1, 1 );
+        from( 0, 0 ).to( 1, 1 ).endHere();
     }
 
     public AWTSimulator getSimulator() {

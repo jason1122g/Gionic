@@ -1,0 +1,9 @@
+
+description = "Gionic-AWT module for event testing"
+
+version = '0.1.0-SNAPSHOT'
+
+
+dependencies {
+    compile project(":gionic-core")
+}

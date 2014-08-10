@@ -1,5 +1,8 @@
 package org.jason1122g.gionic.awt.simulator;
 
+import org.jason1122g.gionic.awt.behavior.key.PressKey;
+import org.jason1122g.gionic.awt.behavior.key.ReleaseKey;
+import org.jason1122g.gionic.awt.behavior.key.TypeKey;
 import org.jason1122g.gionic.awt.behavior.path.DragPath;
 import org.jason1122g.gionic.awt.behavior.path.MovePath;
 import org.jason1122g.gionic.awt.behavior.point.*;
@@ -58,17 +61,17 @@ public class RealSimulator extends BasicSimulator {
 
     @Override
     public Key keyPress() {
-        return null;
+        return new PressKey().setSimulator( this );
     }
 
     @Override
     public Key keyRelease() {
-        return null;
+        return new ReleaseKey().setSimulator( this );
     }
 
     @Override
     public Key keyType() {
-        return null;
+        return new TypeKey().setSimulator( this );
     }
 
 }

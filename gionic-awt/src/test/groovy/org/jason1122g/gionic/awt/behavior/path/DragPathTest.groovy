@@ -18,31 +18,31 @@ class DragPathTest extends Specification {
         when:
             drag.from( 0, 0 ).to( 1, 1 ).endHere()
         then:
-            1 * simulator.press( 0, 0 , 1);
+            1 * simulator.press( 0, 0 , 1, 0 );
             1 * simulator.drag ( 0, 0 );
             1 * simulator.drag ( 1, 1 );
-            1 * simulator.release( 1, 1, 1 );
+            1 * simulator.release( 1, 1, 1, 0 );
     }
 
     def "call to() coniniously to specify a path"(){
         when:
             drag.from( 0, 0 ).to( 1, 1 ).to( 2, 2 ).endHere()
         then:
-            1 * simulator.press( 0, 0 , 1);
+            1 * simulator.press( 0, 0 , 1, 0 );
             1 * simulator.drag ( 0, 0 );
             1 * simulator.drag ( 1, 1 );
             1 * simulator.drag ( 2, 2 );
-            1 * simulator.release( 2, 2, 1 );
+            1 * simulator.release( 2, 2, 1, 0 );
     }
 
     def "call inSomePath() to drag in some path"(){
         when:
             drag.inSomePath()
         then:
-            1 * simulator.press  ( 0 ,0 ,1 )
+            1 * simulator.press  ( 0 ,0 ,1, 0 )
             1 * simulator.drag   ( 0, 0 )
             1 * simulator.drag   ( 1, 1 )
-            1 * simulator.release( 1, 1, 1 )
+            1 * simulator.release( 1, 1, 1, 0 )
     }
 
 }

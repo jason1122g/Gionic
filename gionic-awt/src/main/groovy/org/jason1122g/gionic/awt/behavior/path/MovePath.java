@@ -1,6 +1,6 @@
 package org.jason1122g.gionic.awt.behavior.path;
 
-import org.jason1122g.gionic.awt.behavior.abstracts.AWTPath;
+import org.jason1122g.gionic.awt.behavior.template.AWTPath;
 import org.jason1122g.gionic.behavior.Path;
 
 public class MovePath extends AWTPath {

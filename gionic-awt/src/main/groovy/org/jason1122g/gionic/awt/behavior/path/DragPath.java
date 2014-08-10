@@ -1,6 +1,6 @@
 package org.jason1122g.gionic.awt.behavior.path;
 
-import org.jason1122g.gionic.awt.behavior.abstracts.AWTPath;
+import org.jason1122g.gionic.awt.behavior.template.AWTPath;
 import org.jason1122g.gionic.behavior.Path;
 
 import java.awt.*;
@@ -11,7 +11,7 @@ public class DragPath extends AWTPath {
 
     @Override
     public Path from( int x, int y ) {
-        getSimulator().press( x, y, 1 );
+        getSimulator().press( x, y, 1, 0 );
         getSimulator().drag( x, y );
         return this;
     }
@@ -25,7 +25,7 @@ public class DragPath extends AWTPath {
 
     @Override
     public void endHere() {
-        getSimulator().release( point.x, point.y, 1 );
+        getSimulator().release( point.x, point.y, 1, 0 );
     }
 
 }

@@ -5,8 +5,8 @@ import org.jason1122g.gionic.awt.behavior.template.AWTKey;
 public class PressKey extends AWTKey {
 
     @Override
-    public void of( int keyCode ) {
-        getSimulator().keyPress( keyCode, getTimes(), getModifier() );
+    protected void of( int keyCode, char keyChar ) {
+        getSimulator().keyPress( keyCode, getTimes(), getModifier(), keyChar );
     }
 
 }

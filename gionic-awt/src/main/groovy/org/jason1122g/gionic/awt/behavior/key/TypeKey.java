@@ -5,8 +5,8 @@ import org.jason1122g.gionic.awt.behavior.template.AWTKey;
 public class TypeKey extends AWTKey {
 
     @Override
-    public void of( int keyCode ) {
-        getSimulator().keyType( keyCode, getTimes(), getModifier() );
+    protected void of( int keyCode, char keyChar ) {
+        getSimulator().keyType( keyCode, getTimes(), getModifier(), keyChar );
     }
 
 }

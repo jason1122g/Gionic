@@ -58,9 +58,9 @@ abstract class BasicSimulator implements AWTSimulator {
     }
 
     @Override
-    public void keyPress  ( int keyCode, int times, int keyModifier ) {
+    public void keyPress  ( int keyCode, int times, int keyModifier, char keyChar ) {
         for( int i = 0 ; i < times ; i ++ ){
-            dispatchKeyEvent( KeyEvent.KEY_PRESSED, keyCode, keyModifier );
+            dispatchKeyEvent( KeyEvent.KEY_PRESSED, keyCode, keyModifier, keyChar );
             switch ( keyCode ){
                 case KeyEvent.VK_CONTROL:
                     currentModifier |= MouseEvent.CTRL_DOWN_MASK;  break;
@@ -73,7 +73,7 @@ abstract class BasicSimulator implements AWTSimulator {
     }
 
     @Override
-    public void keyRelease( int keyCode, int times, int keyModifier ) {
+    public void keyRelease( int keyCode, int times, int keyModifier, char keyChar ) {
         for( int i = 0 ; i < times ; i ++ ){
             switch ( keyCode ){
                 case KeyEvent.VK_CONTROL:
@@ -83,16 +83,16 @@ abstract class BasicSimulator implements AWTSimulator {
                 case KeyEvent.VK_ALT:
                     currentModifier ^= MouseEvent.ALT_DOWN_MASK;   break;
             }
-            dispatchKeyEvent( KeyEvent.KEY_RELEASED, keyCode, keyModifier );
+            dispatchKeyEvent( KeyEvent.KEY_RELEASED, keyCode, keyModifier, keyChar );
         }
     }
 
     @Override
-    public void keyType   ( int keyCode, int times, int keyModifier ) {
+    public void keyType   ( int keyCode, int times, int keyModifier, char keyChar ) {
         for( int i = 0 ; i < times ; i ++ ){
-            keyPress  ( keyCode, 1, keyModifier );
-            keyRelease( keyCode, 1, keyModifier );
-            dispatchKeyEvent( KeyEvent.KEY_TYPED, keyCode, keyModifier );
+            keyPress  ( keyCode, 1, keyModifier, keyChar );
+            keyRelease( keyCode, 1, keyModifier, keyChar );
+            dispatchKeyEvent( KeyEvent.KEY_TYPED, keyCode, keyModifier, keyChar );
         }
     }
 
@@ -106,13 +106,14 @@ abstract class BasicSimulator implements AWTSimulator {
         } );
     }
 
-    private void dispatchKeyEvent( final int eventID, final int keyCode, final int keyModifier ){
+    private void dispatchKeyEvent( final int eventID, final int keyCode, final int keyModifier, final char keyChar ){
         SwingUtilities.invokeLater( new Runnable() {
             @Override
             public void run() {
                 eventTarget.dispatchEvent( new KeyEvent( eventTarget, eventID, System.currentTimeMillis(),
-                        currentModifier | keyModifier, keyCode, (char) keyCode ) );
+                        currentModifier | keyModifier, keyCode, keyChar ) );
             }
         } );
     }
+
 }

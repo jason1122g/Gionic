@@ -13,8 +13,8 @@ public interface AWTSimulator extends Simulator {
     public void move   ( int x, int y );
     public void drag   ( int x, int y );
 
-    public void keyPress  ( int keyCode, int times, int keyModifier );
-    public void keyRelease( int keyCode, int times, int keyModifier );
-    public void keyType   ( int keyCode, int times, int keyModifier );
+    public void keyPress  ( int keyCode, int times, int keyModifier, char keyChar );
+    public void keyRelease( int keyCode, int times, int keyModifier, char keyChar );
+    public void keyType   ( int keyCode, int times, int keyModifier, char keyChar );
 
 }

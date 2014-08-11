@@ -11,17 +11,11 @@ import org.jason1122g.gionic.behavior.Path;
 import org.jason1122g.gionic.behavior.Point;
 
 import java.awt.*;
-/**
- * TODO TEST AND FINISH THIS
- */
-public class RealSimulator extends BasicSimulator {
 
-    private RealSimulator( Component eventTarget ){
+abstract class SimulatorDistributor extends SimulatorImplementer {
+
+    protected SimulatorDistributor( Component eventTarget ){
         super( eventTarget );
-    }
-
-    public static RealSimulator control( Component eventTarge ){
-        return new RealSimulator( eventTarge );
     }
 
     @Override

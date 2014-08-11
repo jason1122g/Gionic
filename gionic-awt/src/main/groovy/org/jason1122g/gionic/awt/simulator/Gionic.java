@@ -5,12 +5,10 @@ import org.jason1122g.gionic.core.Simulator;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-/**
- * TODO TEST AND FINISH THIS
- */
 public class Gionic extends SimulatorDistributor {
 
     private Gionic( Component eventTarget ){
@@ -19,6 +17,13 @@ public class Gionic extends SimulatorDistributor {
 
     public static Simulator control( Component eventTarget ){
         return new Gionic( eventTarget );
+    }
+
+    public static Simulator control( MouseAdapter mouseAdapter ){
+        Component component = generateComponent();
+        component.addMouseListener      ( mouseAdapter );
+        component.addMouseMotionListener( mouseAdapter );
+        return control( component );
     }
 
     public static Simulator control( MouseListener mouseListener ){

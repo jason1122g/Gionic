@@ -1,6 +1,6 @@
 ## Gionic [![Build Status](https://travis-ci.org/jason1122g/Gionic.svg?branch=master)](https://travis-ci.org/jason1122g/Gionic)
-Gionic-core: Include the core api
-Gionic-awt : Include a simulator which simulator mouse, mouseMotion and key events
+- Gionic-core: Include the core api
+- Gionic-awt : Include a simulator which simulator mouse, mouseMotion and key events
 
 ## To set a event dispatch target
 

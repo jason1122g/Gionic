@@ -1,8 +1,11 @@
 ## Gionic [![Build Status](https://travis-ci.org/jason1122g/Gionic.svg?branch=master)](https://travis-ci.org/jason1122g/Gionic)
-- Gionic-core: Include the core api
-- Gionic-awt : Include a simulator which simulator mouse, mouseMotion and key events
+Gionic is a test tool for Java AWT/Swing event simulating. You can use Gionic to unit-test with some listeners.
 
-## To set a event dispatch target
+### Packages
+- Gionic-core: Include the core api
+- Gionic-awt : Include a simulator which simulate mouse, mouseMotion and key events
+
+### To set a event dispatch target
 
 - From Component
 ```
@@ -16,7 +19,7 @@ MouseListener listener = getMouseListenerFromSomeWhere();
 Simulator simulator    = Gionic.control( listener );
 ```
 
-## To simulate some events
+### To simulate some events
 
 - ``` simulator.click().forTimes( 5 ).at( 10, 10 ) ```
 - ``` simulator.press().atSomeWhere() ```

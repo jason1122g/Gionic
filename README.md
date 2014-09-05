@@ -1,7 +1,7 @@
 ## Gionic [![Build Status](https://travis-ci.org/jason1122g/Gionic.svg?branch=master)](https://travis-ci.org/jason1122g/Gionic)
 Gionic is a test tool for Java AWT/Swing event simulating. You can use Gionic to unit-test with some listeners.
 
-### Packages
+### Modules
 - Gionic-core: Include the core api
 - Gionic-awt : Include a simulator which simulate mouse, mouseMotion and key events
 
